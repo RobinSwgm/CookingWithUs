@@ -360,6 +360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerChef
       objectReference: {fileID: 0}
+    - target: {fileID: 6786957270399779563, guid: 43aebc84dd520ce4984708eb0e697e46, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d36e5cef57fffa7428c54c59a56a4497, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
