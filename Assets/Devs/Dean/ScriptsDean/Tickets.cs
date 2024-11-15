@@ -8,51 +8,32 @@ public class Tickets : MonoBehaviour
 {
     public GameObject burgerBottomBun;
     public GameObject burgerTopBun;
-    
     public List<GameObject> burgerTicketList;
     public List<GameObject> burgerIngredientList;
+    public Transform burgerSpawnLocation;
+    public float burgerYOffset = -100f;
+    public float burgerInitialOffset = -50f;
 
-    public TextMeshProUGUI ticketList;
+    public GameObject pizzaDough;
+    public GameObject pizzaSauce;
+    public List<GameObject> pizzaTicketList;
+    public List<GameObject> pizzaIngredientList;
+    public Transform pizzaSpawnLocation;
+    public float pizzaYOffset = 100f;
+    public float pizzaInitialOffset = 50f;
 
     public int difficulty = 1;
 
-    public List<string> ticket;
-    public List<string> ingredients;
-
     private void Start()
     {
-        CreateTicket();
-        UpdateTicketList();
-        CreateBurgerTicket();
-    }
-
-    private void CreateTicket()
-    {
-        ticket = new List<string>();
-        ticket.Add("BottomBun");
-        int size = Random.Range(1, difficulty + 1);
-        for (int i = 0; i < size; i++)
-        {
-            int choice = Random.Range(0, ingredients.Count);
-            ticket.Add(ingredients[choice]);
-        }
-        ticket.Add("TopBun");
-    }
-
-    private void UpdateTicketList()
-    {
-        ticketList.text = "";
-
-        for (int i = 0;i < ticket.Count;i++)
-        {
-            ticketList.text += $"{ticket[i]}\n";
-        }
+        UpdateBurgerTicket();
+        UpdatePizzaTicket();
     }
 
     private void CreateBurgerTicket()
     {
         burgerTicketList = new List<GameObject>();
-        burgerTicketList.Add(burgerBottomBun);
+        burgerTicketList.Add(burgerTopBun);
 
         int size = Random.Range(1, difficulty + 1);
         for (int i = 0; i < size; i++)
@@ -61,11 +42,44 @@ public class Tickets : MonoBehaviour
             burgerTicketList.Add(burgerIngredientList[choice]);
         }
 
-        burgerTicketList.Add(burgerTopBun);
+        burgerTicketList.Add(burgerBottomBun);
     }
 
     private void UpdateBurgerTicket()
     {
+        CreateBurgerTicket();
+        Vector3 spawnLocation = burgerSpawnLocation.position;
 
+        for (int i = 0; i < burgerTicketList.Count; i++)
+        {
+            GameObject spawnedObject = Instantiate(burgerTicketList[i], burgerSpawnLocation);
+            spawnedObject.transform.localPosition = new Vector3(0, i * burgerYOffset + burgerInitialOffset, 0);
+        }
+    }
+
+    private void CreatePizzaTicket()
+    {
+        pizzaTicketList = new List<GameObject>();
+        pizzaTicketList.Add(pizzaDough);
+        pizzaTicketList.Add(pizzaSauce);
+
+        int size = Random.Range(1, difficulty + 1);
+        for (int i = 0; i < size; i++)
+        {
+            int choice = Random.Range(0, pizzaIngredientList.Count);
+            pizzaTicketList.Add(pizzaIngredientList[choice]);
+        }
+    }
+
+    private void UpdatePizzaTicket()
+    {
+        CreatePizzaTicket();
+        Vector3 spawnLocation = pizzaSpawnLocation.position;
+
+        for (int i = 0; i < pizzaTicketList.Count; i++)
+        {
+            GameObject spawnedObject = Instantiate(pizzaTicketList[i], pizzaSpawnLocation);
+            spawnedObject.transform.localPosition = new Vector3(0, i * pizzaYOffset + pizzaInitialOffset, 0);
+        }
     }
 }
