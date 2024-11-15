@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float speed;
-    private Vector3 moveDirection;
-    public InputActionReference move;
+    public float moveSpeed;
+    public float turnSpeed;
+    public InputActionReference turn;
+    private float turnInput;
 
   private void Update()
     {
-        moveDirection = move.action.ReadValue<Vector3>();
-        rb.velocity = new Vector3(moveDirection.x * speed, gameObject.transform.position.y, moveDirection.z * speed);
+        turnInput = turn.action.ReadValue<float>();
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+
+        transform.Rotate(transform.up * turnInput * turnSpeed * Time.deltaTime);
     }
 }
