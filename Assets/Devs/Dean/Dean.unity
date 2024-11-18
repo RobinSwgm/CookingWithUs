@@ -1297,6 +1297,8 @@ MonoBehaviour:
   pizzaYOffset: 100
   pizzaInitialOffset: 50
   difficulty: 2
+  ticketStartLocation: {fileID: 0}
+  ticketOffset: 0
 --- !u!1 &1963341511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,14 +1399,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 749894549475079067, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d36e5cef57fffa7428c54c59a56a4497, type: 2}
-    - target: {fileID: 2828261030025992621, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d36e5cef57fffa7428c54c59a56a4497, type: 2}
     - target: {fileID: 4826354430643284840, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
       propertyPath: m_Name
       value: PlayerChef1
@@ -1514,26 +1508,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3383624158085079084, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5d14b64ae5f3fbd4888275739dd91a5f, type: 2}
-    - target: {fileID: 3477588874852428297, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5d14b64ae5f3fbd4888275739dd91a5f, type: 2}
-    - target: {fileID: 5317913443456343555, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5d14b64ae5f3fbd4888275739dd91a5f, type: 2}
-    - target: {fileID: 5427324729081837844, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5d14b64ae5f3fbd4888275739dd91a5f, type: 2}
-    - target: {fileID: 7270269311238566965, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5d14b64ae5f3fbd4888275739dd91a5f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
