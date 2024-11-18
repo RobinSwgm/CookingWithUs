@@ -10,12 +10,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
-    private Vector3 lastPosition;
-    private float currentSpeed;
-
     private void Start()
     {
-        lastPosition = transform.position;
+        animator.SetFloat("PlayerSpeed", 1);
     }
 
     private void Update()
@@ -23,10 +20,5 @@ public class PlayerMovement : MonoBehaviour
         turnInput = turn.action.ReadValue<float>();
         transform.Rotate(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-
-        currentSpeed = (transform.position - lastPosition).magnitude / Time.deltaTime;
-        animator.SetFloat("PlayerSpeed", currentSpeed);
-        lastPosition = transform.position;
-        Debug.Log(currentSpeed);
     }
 }
