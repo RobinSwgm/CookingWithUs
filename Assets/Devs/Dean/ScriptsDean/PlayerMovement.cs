@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float turnSpeed;
     public InputActionReference turn;
-    private float turnInput;
+    [SerializeField] private float turnInput;
 
     public Animator animator;
 
