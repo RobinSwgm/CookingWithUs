@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class PickupScript : MonoBehaviour
 {
@@ -48,6 +49,8 @@ public class PickupScript : MonoBehaviour
         if (_foodObj.Count > 0)
         {
             Instantiate(_foodObj[0], _spawn.position, Quaternion.identity, _parentRightHand.transform);
+           // Instantiate(_foodObj[0], _spawn.position, Quaternion.identity);  // instatiate the object
+            _foodObj[0].transform.localScale = new Vector3(1, 1, 1); // change its local scale in x y z format
 
         }
 
