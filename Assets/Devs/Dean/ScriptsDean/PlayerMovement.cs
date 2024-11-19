@@ -20,7 +20,9 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         turnInput = turn.action.ReadValue<float>();
-        transform.Rotate(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
+        //transform.Rotate(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
         rb.velocity = transform.forward * moveSpeed;
+        Quaternion deltaRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
+        rb.MoveRotation(rb.rotation * deltaRotation);
     }
 }
