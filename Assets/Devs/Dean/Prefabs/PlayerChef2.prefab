@@ -302,6 +302,8 @@ MonoBehaviour:
   moveSpeed: 5
   turnSpeed: 75
   turn: {fileID: -2482686846264177884, guid: a490726aacd482a4581928019503f2b5, type: 3}
+  turnInput: 0
+  rb: {fileID: 786043254107618335}
   animator: {fileID: 4251632718059434436}
 --- !u!114 &512424484004924881
 MonoBehaviour:

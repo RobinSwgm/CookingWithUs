@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public InputActionReference turn;
     [SerializeField] private float turnInput;
 
+    public Rigidbody rb;
+
     public Animator animator;
 
     private void Start()
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         turnInput = turn.action.ReadValue<float>();
         transform.Rotate(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        //transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        rb.velocity = Vector3.forward * moveSpeed;
     }
 }
