@@ -464,6 +464,14 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1022138099903830393, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022138099903830393, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53fab350616182c4ca76080a00b9eb5f, type: 2}
     - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
       propertyPath: moveSpeed
       value: 11
@@ -472,10 +480,58 @@ PrefabInstance:
       propertyPath: turnSpeed
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 3383624158085079084, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3383624158085079084, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53fab350616182c4ca76080a00b9eb5f, type: 2}
     - target: {fileID: 3436084403692978606, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3477588874852428297, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477588874852428297, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53fab350616182c4ca76080a00b9eb5f, type: 2}
+    - target: {fileID: 5317913443456343555, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317913443456343555, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53fab350616182c4ca76080a00b9eb5f, type: 2}
+    - target: {fileID: 5427324729081837844, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427324729081837844, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53fab350616182c4ca76080a00b9eb5f, type: 2}
+    - target: {fileID: 5935923623494603991, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935923623494603991, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53fab350616182c4ca76080a00b9eb5f, type: 2}
+    - target: {fileID: 7270269311238566965, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270269311238566965, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53fab350616182c4ca76080a00b9eb5f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -741,7 +797,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ce139592cce4e68498f7def3f835bbbf, type: 2}
+  - {fileID: 2100000, guid: bc2a6946f5b7ad84c9d0a0497ac59bcb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1076,7 +1133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burgerBottomBun: {fileID: 5335056536742038281, guid: 5121746c70acb9d45a17313bedc58c70, type: 3}
   burgerTopBun: {fileID: 6837458747765828334, guid: 9b18473ef1f291c42a11ddb9c6d9d299, type: 3}
-  burgerTicketList: []
   burgerIngredientList:
   - {fileID: 1141708834385031671, guid: 6da035f89ea99294283ca41cba81b67d, type: 3}
   - {fileID: 8928142646752813116, guid: 957328ff699b5e14b966128553365610, type: 3}
@@ -1086,9 +1142,11 @@ MonoBehaviour:
   burgerSpawnLocation: {fileID: 1973784196}
   burgerYOffset: -100
   burgerInitialOffset: -50
+  burgerXOffset: 200
+  maxBurgerTickets: 3
+  amountOfBurgerTickets: 0
   pizzaDough: {fileID: 4432235763134041506, guid: 1d5d7a8020f0f5a439decf8720c3e7fd, type: 3}
   pizzaSauce: {fileID: 1365813708488173585, guid: d935d2e87cfdeeb468bd6c062e8caae7, type: 3}
-  pizzaTicketList: []
   pizzaIngredientList:
   - {fileID: 3306203828696554932, guid: 81f97639ecc305a4cad624065f5d4b2a, type: 3}
   - {fileID: 1922291692014267746, guid: 31f40a0c787b958459483c7fb353c47b, type: 3}
@@ -1098,6 +1156,8 @@ MonoBehaviour:
   pizzaSpawnLocation: {fileID: 1272259601}
   pizzaYOffset: 100
   pizzaInitialOffset: 50
+  pizzaXOffset: 200
+  maxPizzaTickets: 3
   difficulty: 2
 --- !u!4 &1306088855
 Transform:
