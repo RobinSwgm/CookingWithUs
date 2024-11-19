@@ -1,18 +1,55 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private List<string> _foods;
+    [SerializeField]
+    private List<GameObject> _foodObj;
+
+    [SerializeField]
+    private Transform _spawn;
+
+    [SerializeField]
+    private GameObject _parentRightHand;
+
+    private void Start()
     {
-        
+        _foods = new List<string>();
+        _foodObj = new List<GameObject>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Food")
+        {
+
+            if (!_foods.Contains(other.gameObject.name))
+            {
+                Debug.Log(other.gameObject.name);
+
+                if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.UpArrow))
+                {
+                    _foods.Add(other.gameObject.name);
+                    _foodObj.Add(other.gameObject);
+                    PickUpItems();
+                }
+            }
+            else
+            {
+                Debug.Log("{other.gameObject.name} is already in your inventory.");
+            }
+        }
+    }
+
+    public void PickUpItems()
+    {
+        if (_foodObj.Count > 0)
+        {
+            Instantiate(_foodObj[0], _spawn.position, Quaternion.identity, _parentRightHand.transform);
+
+        }
+
     }
 }
