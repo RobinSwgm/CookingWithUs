@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     {
         turnInput = turn.action.ReadValue<float>();
         transform.Rotate(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
-        //transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-        rb.velocity = Vector3.forward * moveSpeed;
+        rb.velocity = transform.forward * moveSpeed;
     }
 }
