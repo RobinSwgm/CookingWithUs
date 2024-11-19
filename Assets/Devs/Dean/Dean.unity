@@ -364,6 +364,18 @@ PrefabInstance:
       value: PlayerChef1
       objectReference: {fileID: 0}
     - target: {fileID: 5310156707229364690, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310156707229364690, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310156707229364690, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310156707229364690, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.5
       objectReference: {fileID: 0}
@@ -403,6 +415,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5310156707229364690, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7928266630310190222, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
       propertyPath: playerCoins
       value: 
@@ -410,7 +426,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4826354430643284840, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1581575101}
   m_SourcePrefab: {fileID: 100100000, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
 --- !u!1 &770899532
 GameObject:
@@ -1064,6 +1083,27 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 786043254107618335, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
   m_PrefabInstance: {fileID: 8161492156906992302}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1581575092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4826354430643284840, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+  m_PrefabInstance: {fileID: 731526063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1581575101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581575092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb9be55a34a0474682712d061d1180d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _foods: []
+  _foodObj: []
+  _spawn: {fileID: 0}
+  _parentRightHand: {fileID: 0}
 --- !u!1 &1605878655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,7 +1386,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burgerBottomBun: {fileID: 5335056536742038281, guid: 5121746c70acb9d45a17313bedc58c70, type: 3}
   burgerTopBun: {fileID: 6837458747765828334, guid: 9b18473ef1f291c42a11ddb9c6d9d299, type: 3}
-  burgerTicketList: []
   burgerIngredientList:
   - {fileID: 1141708834385031671, guid: 6da035f89ea99294283ca41cba81b67d, type: 3}
   - {fileID: 8928142646752813116, guid: 957328ff699b5e14b966128553365610, type: 3}
@@ -1356,9 +1395,14 @@ MonoBehaviour:
   burgerSpawnLocation: {fileID: 1322553821}
   burgerYOffset: -100
   burgerInitialOffset: -50
+<<<<<<< Updated upstream
+=======
+  burgerXOffset: 200
+  maxBurgerTickets: 3
+  amountOfBurgerTickets: 0
+>>>>>>> Stashed changes
   pizzaDough: {fileID: 4432235763134041506, guid: 1d5d7a8020f0f5a439decf8720c3e7fd, type: 3}
   pizzaSauce: {fileID: 1365813708488173585, guid: d935d2e87cfdeeb468bd6c062e8caae7, type: 3}
-  pizzaTicketList: []
   pizzaIngredientList:
   - {fileID: 3306203828696554932, guid: 81f97639ecc305a4cad624065f5d4b2a, type: 3}
   - {fileID: 1922291692014267746, guid: 31f40a0c787b958459483c7fb353c47b, type: 3}
@@ -1478,6 +1522,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 990558475}
     - target: {fileID: 726302623264382026, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 726302623264382026, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 726302623264382026, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 726302623264382026, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5
       objectReference: {fileID: 0}
@@ -1517,10 +1573,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 726302623264382026, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
       propertyPath: rb
       value: 
       objectReference: {fileID: 1575042760}
+    - target: {fileID: 3436084403692978606, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Height
+      value: 0.03745795
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436084403692978606, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Radius
+      value: 0.010959506
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436084403692978606, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_Center.y
+      value: 0.019833375
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
