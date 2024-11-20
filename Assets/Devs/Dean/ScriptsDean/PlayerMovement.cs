@@ -5,6 +5,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     public float turnSpeed;
+    public float acceleration = 1;
+    public float maxSpeed = 7;
+    public float minSpeed = 1;
     public InputActionReference turn;
     [SerializeField] private float turnInput;
 
@@ -20,7 +23,18 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         turnInput = turn.action.ReadValue<float>();
-        //transform.Rotate(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
+        if (turnInput != 0 && moveSpeed >= minSpeed)
+        {
+            moveSpeed -= acceleration * Time.deltaTime;
+            moveSpeed = Mathf.Min(moveSpeed, maxSpeed);
+            Debug.Log("Going down!");
+        }
+        if (turnInput == 0 && moveSpeed < maxSpeed)
+        {
+            moveSpeed += acceleration * Time.deltaTime;
+            moveSpeed = Mathf.Min(moveSpeed, maxSpeed);
+            Debug.Log("Going up!");
+        }
         rb.velocity = transform.forward * moveSpeed;
         Quaternion deltaRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
         rb.MoveRotation(rb.rotation * deltaRotation);
