@@ -295,8 +295,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b307a819c6e584448acf3cb7975bf4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 1
   turnSpeed: 100
+  acceleration: 1
+  deceleration: 1
+  maxSpeed: 7
+  minSpeed: 1
   turn: {fileID: 6257770801264565716, guid: a490726aacd482a4581928019503f2b5, type: 3}
   turnInput: 0
   rb: {fileID: 5490017209730824186}

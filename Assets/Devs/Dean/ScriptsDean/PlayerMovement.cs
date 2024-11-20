@@ -33,6 +33,5 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = transform.forward * moveSpeed;
         Quaternion deltaRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
         rb.MoveRotation(rb.rotation * deltaRotation);
-        Debug.Log(Vector3.Magnitude(rb.velocity));
     }
 }

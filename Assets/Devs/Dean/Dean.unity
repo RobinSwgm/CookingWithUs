@@ -651,10 +651,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
       propertyPath: moveSpeed
       value: 1
       objectReference: {fileID: 0}
@@ -1294,11 +1290,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347889477}
   m_CullTransparentMesh: 1
---- !u!54 &1575042760 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 786043254107618335, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-  m_PrefabInstance: {fileID: 8161492156906992302}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1750597334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,10 +1638,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerChef2
       objectReference: {fileID: 0}
-    - target: {fileID: 98948143116961520, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 512424484004924881, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
       propertyPath: playerCoins
       value: 
@@ -1696,28 +1683,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 1575042760}
-    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: maxSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: minSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: moveSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
-      propertyPath: turnSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
       propertyPath: acceleration
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
