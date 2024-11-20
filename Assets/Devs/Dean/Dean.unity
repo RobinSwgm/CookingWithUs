@@ -1647,6 +1647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerChef2
       objectReference: {fileID: 0}
+    - target: {fileID: 98948143116961520, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 512424484004924881, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
       propertyPath: playerCoins
       value: 

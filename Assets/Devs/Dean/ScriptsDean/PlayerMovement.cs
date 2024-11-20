@@ -15,14 +15,10 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
 
     public Animator animator;
-
-    private void Start()
-    {
-        animator.SetFloat("PlayerSpeed", 1);
-    }
-
+        
     private void Update()
     {
+        animator.SetFloat("PlayerSpeed", moveSpeed / maxSpeed);
         turnInput = turn.action.ReadValue<float>();
         if (turnInput != 0 && moveSpeed >= minSpeed)
         {
@@ -37,6 +33,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = transform.forward * moveSpeed;
         Quaternion deltaRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
         rb.MoveRotation(rb.rotation * deltaRotation);
-        Debug.Log(rb.velocity);
+        Debug.Log(Vector3.Magnitude(rb.velocity));
     }
 }
