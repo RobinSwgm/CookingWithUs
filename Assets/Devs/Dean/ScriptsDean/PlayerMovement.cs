@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float turnSpeed;
     public float acceleration = 1;
+    public float deceleration = 1;
     public float maxSpeed = 7;
     public float minSpeed = 1;
     public InputActionReference turn;
@@ -27,16 +28,15 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed -= acceleration * Time.deltaTime;
             moveSpeed = Mathf.Min(moveSpeed, maxSpeed);
-            Debug.Log("Going down!");
         }
         if (turnInput == 0 && moveSpeed < maxSpeed)
         {
             moveSpeed += acceleration * Time.deltaTime;
             moveSpeed = Mathf.Min(moveSpeed, maxSpeed);
-            Debug.Log("Going up!");
         }
         rb.velocity = transform.forward * moveSpeed;
         Quaternion deltaRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
         rb.MoveRotation(rb.rotation * deltaRotation);
+        Debug.Log(rb.velocity);
     }
 }
