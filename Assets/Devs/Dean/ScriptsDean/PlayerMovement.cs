@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         turnInput = turn.action.ReadValue<float>();
         if (turnInput != 0 && moveSpeed >= minSpeed)
         {
-            moveSpeed -= acceleration * Time.deltaTime;
+            moveSpeed -= deceleration * Time.deltaTime;
             moveSpeed = Mathf.Min(moveSpeed, maxSpeed);
         }
         if (turnInput == 0 && moveSpeed < maxSpeed)
