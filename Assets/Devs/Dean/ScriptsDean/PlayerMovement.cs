@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
 
     public Animator animator;
+
+    public List<GameObject> currentItems;
         
     private void Update()
     {
