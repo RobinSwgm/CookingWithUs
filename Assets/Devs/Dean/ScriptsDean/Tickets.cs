@@ -22,6 +22,7 @@ public class Tickets : MonoBehaviour
     public float pizzaInitialOffset = 50f;
     public float pizzaXOffset = 200f;
     public int maxPizzaTickets = 3;
+    public int amountOfPizzaTickets = 0;
 
     public int difficulty = 1;
 
@@ -37,8 +38,12 @@ public class Tickets : MonoBehaviour
 
     private IEnumerator Test()
     {
-        yield return new WaitForSeconds(5);
-        DeleteBurgerTicket(1);
+        yield return new WaitForSeconds(11 - difficulty);
+        maxBurgerTickets = 2 + difficulty;
+        maxPizzaTickets = 2 + difficulty;
+        UpdateBurgerTickets();
+        UpdatePizzaTickets();
+        StartCoroutine(Test());
     }
 
     private List<GameObject> CreateBurgerTicket()
@@ -55,28 +60,21 @@ public class Tickets : MonoBehaviour
         }
         GameObject bottomBun = Instantiate(burgerBottomBun, burgerSpawnLocation);
         newTicket.Add(bottomBun);
+        amountOfBurgerTickets++;
 
         return newTicket;
     }
 
-    private void UpdateBurgerTickets()
+    public void UpdateBurgerTickets()
     {
         if (amountOfBurgerTickets < maxBurgerTickets)
-        {
-
-        }
-        for (int ticketIndex = 0; ticketIndex < maxBurgerTickets; ticketIndex++)
         {
             List<GameObject> ticket = CreateBurgerTicket();
             burgerTickets.Add(ticket);
 
             for (int i = 0; i < ticket.Count; i++)
             {
-                ticket[i].transform.localPosition = new Vector3(
-                    ticketIndex * burgerXOffset,
-                    i * burgerYOffset + burgerInitialOffset,
-                    0
-                );
+                ticket[i].transform.localPosition = new Vector3((burgerTickets.Count - 1) * burgerXOffset, i * burgerYOffset + burgerInitialOffset, 0);
             }
         }
     }
@@ -95,24 +93,21 @@ public class Tickets : MonoBehaviour
             GameObject topping = Instantiate(pizzaIngredientList[choice], pizzaSpawnLocation);
             newTicket.Add(topping);
         }
+        amountOfPizzaTickets++;
 
         return newTicket;
     }
 
-    private void UpdatePizzaTickets()
+    public void UpdatePizzaTickets()
     {
-        for (int ticketIndex = 0; ticketIndex < maxPizzaTickets; ticketIndex++)
+        if (amountOfPizzaTickets < maxPizzaTickets)
         {
             List<GameObject> ticket = CreatePizzaTicket();
             pizzaTickets.Add(ticket);
 
             for (int i = 0; i < ticket.Count; i++)
             {
-                ticket[i].transform.localPosition = new Vector3(
-                    ticketIndex * pizzaXOffset,
-                    i * pizzaYOffset + pizzaInitialOffset,
-                    0
-                );
+                ticket[i].transform.localPosition = new Vector3((pizzaTickets.Count - 1) * pizzaXOffset, i * pizzaYOffset + pizzaInitialOffset, 0);
             }
         }
     }
@@ -128,6 +123,7 @@ public class Tickets : MonoBehaviour
             }
             burgerTickets.RemoveAt(index);
             RearrangeBurgerTickets();
+            amountOfBurgerTickets--;
         }
     }
 
@@ -142,6 +138,7 @@ public class Tickets : MonoBehaviour
             }
             pizzaTickets.RemoveAt(index);
             RearrangePizzaTickets();
+            amountOfPizzaTickets--;
         }
     }
 
