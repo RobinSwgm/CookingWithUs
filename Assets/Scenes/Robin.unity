@@ -320,6 +320,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 25.343, y: 0, z: 0}
+--- !u!1 &1031983297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031983298}
+  m_Layer: 0
+  m_Name: PizzaParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1031983298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031983297}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1894229844625629210}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1317452502
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pizzaDoughPrefab: {fileID: 2211686961509615402, guid: 3c93ee6c7621d0b47b19973438bf0db6, type: 3}
-  _parentRightHand: {fileID: 3871169666557586265}
+  _parentRightHand: {fileID: 1031983297}
   _spawn: {fileID: 6179181553014545022}
 --- !u!65 &1538281128
 BoxCollider:
@@ -592,6 +623,7 @@ GameObject:
   - component: {fileID: 2048825316}
   - component: {fileID: 2048825315}
   - component: {fileID: 2048825314}
+  - component: {fileID: 2048825318}
   - component: {fileID: 2048825313}
   - component: {fileID: 2048825317}
   m_Layer: 0
@@ -620,7 +652,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.02, y: 1, z: 2.3}
+  m_Size: {x: 2.48, y: 1, z: 2.93}
   m_Center: {x: 0, y: 0, z: 0.06597603}
 --- !u!23 &2048825314
 MeshRenderer:
@@ -708,6 +740,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2048825318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048825311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f32bd1cb91b8f24ea60b6a143acd245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizzaSaucePrefab: {fileID: 3378236295757821822, guid: eca82e633945b2e40961f838e7e14d29, type: 3}
+  _parentRightHand: {fileID: 1031983297}
+  _spawn: {fileID: 6179181553014545022}
 --- !u!1 &56888712319016579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1265,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6179181553014545022}
+  - {fileID: 1031983298}
   m_Father: {fileID: 4846367566762872737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925391400046066204
@@ -1325,6 +1373,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turnSpeed: 100
+  acceleration: 1
+  deceleration: 1
+  maxSpeed: 7
+  minSpeed: 1
   turn: {fileID: 6257770801264565716, guid: a490726aacd482a4581928019503f2b5, type: 3}
   turnInput: 0
   rb: {fileID: 5490017210510366675}
