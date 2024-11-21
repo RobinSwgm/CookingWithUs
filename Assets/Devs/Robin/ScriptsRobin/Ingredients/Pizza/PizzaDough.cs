@@ -11,7 +11,7 @@ public class PizzaDough : MonoBehaviour
 
     [SerializeField]
     private Transform _spawn;
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
