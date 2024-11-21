@@ -6,6 +6,7 @@ public class InAndOutOven : MonoBehaviour
 {
     private bool m_IsEnabled; // staat de oven aan?
     private float m_OvenTimer;
+    [SerializeField] private PlayerMovement playerscript;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class InAndOutOven : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -38,9 +39,7 @@ public class InAndOutOven : MonoBehaviour
                 PlayerMovement _playerComponent = other.GetComponent<PlayerMovement>();
                 if (_playerComponent != null)
                 {
-                    // hebben we deeg?
-                    bool _hasDough = _playerComponent.HasDough();
-                    if (_hasDough)
+                    if (_playerComponent.currentItems.Count > 0 && _playerComponent.currentItems[0].name == "PizzaBase(Clone)")
                     {
                         // ok, wehebben deeg
                         // we moeten deeg uit de handen verwijderen
@@ -49,6 +48,12 @@ public class InAndOutOven : MonoBehaviour
                         // timer gaat aan
                         m_OvenTimer = 10;
                         m_IsEnabled = true;
+                        foreach (GameObject ingredient in _playerComponent.currentItems)
+                        {
+                            Destroy(ingredient);
+                            _playerComponent.currentItems.Remove(ingredient);
+                        }
+                        Debug.Log("qwertyuio");
                     }
                 }
             }

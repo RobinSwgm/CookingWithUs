@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 116395723}
   - component: {fileID: 116395722}
   - component: {fileID: 116395721}
+  - component: {fileID: 116395725}
   m_Layer: 0
   m_Name: Oven
   m_TagString: Untagged
@@ -156,7 +157,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -227,6 +228,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &116395725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116395720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bdfcfe812978af4995c6cb3bb4e8b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerscript: {fileID: 532991735}
+--- !u!4 &224842660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5372136193742381381, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+  m_PrefabInstance: {fileID: 532991731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &384964598
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +424,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 780302714}
     m_Modifications:
+    - target: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: turnSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: acceleration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4826354430643284840, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
       propertyPath: m_Name
       value: PlayerChef1
@@ -459,6 +490,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5310156707229364690, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
   m_PrefabInstance: {fileID: 532991731}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &532991735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+  m_PrefabInstance: {fileID: 532991731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b307a819c6e584448acf3cb7975bf4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &570163854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1080,6 +1122,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 780302714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1181175498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7673372736591887144, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+  m_PrefabInstance: {fileID: 532991731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1653927822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1257,8 @@ GameObject:
   - component: {fileID: 1918188542}
   - component: {fileID: 1918188541}
   - component: {fileID: 1918188540}
+  - component: {fileID: 1918188544}
+  - component: {fileID: 1918188545}
   m_Layer: 0
   m_Name: Ingredient1
   m_TagString: Untagged
@@ -1232,11 +1281,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1918188541
 MeshRenderer:
@@ -1303,6 +1352,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1918188544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918188539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f62d6f195cff047952ae851f1f3711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizzaDoughPrefab: {fileID: 2211686961509615402, guid: 3c93ee6c7621d0b47b19973438bf0db6, type: 3}
+  _parentRightHand: {fileID: 1181175498}
+  _spawn: {fileID: 224842660}
+--- !u!65 &1918188545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918188539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1932916076
 GameObject:
   m_ObjectHideFlags: 0
