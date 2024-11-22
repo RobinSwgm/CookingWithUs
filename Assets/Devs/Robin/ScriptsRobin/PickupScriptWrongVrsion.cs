@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupScript : MonoBehaviour
+public class PickupScriptWrongVrsion : MonoBehaviour
 {
     [SerializeField]
     private List<string> _foods;

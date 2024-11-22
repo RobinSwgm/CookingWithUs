@@ -1,27 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PizzaDough : MonoBehaviour
+public class PizzaDough : PizzaMain
 {
     [SerializeField] GameObject pizzaDoughPrefab;
 
-    [SerializeField]
-    private GameObject _parentRightHand;
+    public static bool iscreated;
 
-    [SerializeField]
-    private Transform _spawn;
-    private void OnTriggerStay(Collider other)
+    protected override void AdjustedSpawnPoint()
     {
-        if (other.CompareTag("Player"))
+        if (!iscreated)
         {
-            if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.UpArrow))
-            {
-                Debug.Log("Hit player");
-                GameObject doughObj = Instantiate(pizzaDoughPrefab, _spawn.position, Quaternion.identity, _parentRightHand.transform);
-                doughObj.transform.localScale = new Vector3(0.02f, 0.0003f, 0.02f); // change its local scale in x y z format
-                doughObj.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
-            }
+            GameObject doughObj = Instantiate(pizzaDoughPrefab, _spawn.position, Quaternion.identity, _parentRightHand.transform);
+            playerScript.currentItems.Add(doughObj);
+            iscreated = true;
         }
+
+
     }
+
 }
