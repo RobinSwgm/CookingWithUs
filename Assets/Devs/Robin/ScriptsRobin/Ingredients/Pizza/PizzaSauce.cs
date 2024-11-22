@@ -27,8 +27,8 @@ public class PizzaSauce : MonoBehaviour
 
                     GameObject sauceObj = Instantiate(pizzaSaucePrefab, adjustedSpawnPosition, Quaternion.identity, _parentRightHand.transform);
 
-                    sauceObj.transform.localScale = new Vector3(0.015f, 0.0003f, 0.015f); // change its local scale in x y z format
-                    sauceObj.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+                   // sauceObj.transform.localScale = new Vector3(0.015f, 0.0003f, 0.015f); // change its local scale in x y z format
+                    //sauceObj.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
                     iscreated = true;
                 }
             }

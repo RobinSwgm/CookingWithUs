@@ -29,8 +29,8 @@ public class PizzaPepperoni : MonoBehaviour
 
                     GameObject pepperoniObj = Instantiate(pizzaPepperoniPrefab, adjustedSpawnPosition, Quaternion.identity, _parentRightHand.transform);
 
-                    pepperoniObj.transform.localScale = new Vector3(0.008f, 0.0002f, 0.008f); // change its local scale in x y z format
-                    pepperoniObj.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+                    //pepperoniObj.transform.localScale = new Vector3(0.008f, 0.0002f, 0.008f); // change its local scale in x y z format
+                    //pepperoniObj.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
                     iscreated = true;
                 }
             }
