@@ -406,10 +406,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   turnSpeed: 210
-  acceleration: 15
-  deceleration: 12
-  maxSpeed: 22
-  minSpeed: 11
+  acceleration: 8
+  deceleration: 3
+  maxSpeed: 10
+  minSpeed: 3
   turn: {fileID: 6257770801264565716, guid: a490726aacd482a4581928019503f2b5, type: 3}
   turnInput: 0
   rb: {fileID: 5490017209730824186}

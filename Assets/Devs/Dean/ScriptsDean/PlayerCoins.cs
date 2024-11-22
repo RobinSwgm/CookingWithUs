@@ -35,7 +35,7 @@ public class PlayerCoins : MonoBehaviour
     {
         if (!GameOver)
         {
-            yield return new WaitForSeconds(player1Difficulty);
+            yield return new WaitForSeconds(1 / player1Difficulty);
             player1AmountOfCoins--;
             if (player1AmountOfCoins <= 0)
             {
@@ -53,7 +53,7 @@ public class PlayerCoins : MonoBehaviour
     {
         if (!GameOver)
         {
-            yield return new WaitForSeconds(player2Difficulty);
+            yield return new WaitForSeconds(1 / player2Difficulty);
             player2AmountOfCoins--;
             if (player2AmountOfCoins <= 0)
             {
