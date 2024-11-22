@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 116395722}
   - component: {fileID: 116395721}
   - component: {fileID: 116395725}
+  - component: {fileID: 116395726}
   m_Layer: 0
   m_Name: Oven
   m_TagString: Untagged
@@ -241,6 +242,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerscript: {fileID: 532991735}
+  pizza: {fileID: 2211686961509615402, guid: 3c93ee6c7621d0b47b19973438bf0db6, type: 3}
+--- !u!114 &116395726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116395720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bdfcfe812978af4995c6cb3bb4e8b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerscript: {fileID: 2125052286}
+  pizza: {fileID: 2211686961509615402, guid: 3c93ee6c7621d0b47b19973438bf0db6, type: 3}
 --- !u!4 &224842660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5372136193742381381, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
@@ -413,7 +429,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 570163855}
-  - {fileID: 831909951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &532991731
@@ -552,6 +567,18 @@ PrefabInstance:
     - target: {fileID: 726302623264382026, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: turnSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: acceleration
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -804,10 +831,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 532991732}
-  - {fileID: 1105192350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &831909947
+--- !u!1 &888293343
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -815,24 +841,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 831909951}
-  - component: {fileID: 831909950}
-  - component: {fileID: 831909949}
-  - component: {fileID: 831909948}
+  - component: {fileID: 888293349}
+  - component: {fileID: 888293348}
+  - component: {fileID: 888293347}
+  - component: {fileID: 888293346}
+  - component: {fileID: 888293345}
+  - component: {fileID: 888293344}
   m_Layer: 0
-  m_Name: Plate2Burger
+  m_Name: Ingredient3pepperoni
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &831909948
+--- !u!114 &888293344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888293343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f32bd1cb91b8f24ea60b6a143acd245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentRightHand: {fileID: 1181175498}
+  _spawn: {fileID: 224842660}
+  playerScript: {fileID: 532991735}
+  pizzaSaucePrefab: {fileID: 1992366967035816410, guid: c77933ca18783f94e86d54bd16a16284, type: 3}
+--- !u!65 &888293345
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831909947}
+  m_GameObject: {fileID: 888293343}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -847,13 +891,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &831909949
+--- !u!65 &888293346
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888293343}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &888293347
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831909947}
+  m_GameObject: {fileID: 888293343}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -889,28 +954,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &831909950
+--- !u!33 &888293348
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831909947}
+  m_GameObject: {fileID: 888293343}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &831909951
+--- !u!4 &888293349
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831909947}
+  m_GameObject: {fileID: 888293343}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2, y: -5.907014, z: -12.9}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.1, y: 0.67, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 390044559}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1028007829
 GameObject:
@@ -1017,111 +1082,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -0.071, y: 90.798, z: -0.003}
---- !u!1 &1105192346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1105192350}
-  - component: {fileID: 1105192349}
-  - component: {fileID: 1105192348}
-  - component: {fileID: 1105192347}
-  m_Layer: 0
-  m_Name: Plate1pizza
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1105192347
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105192346}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1105192348
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105192346}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1105192349
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105192346}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1105192350
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105192346}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4, y: -4.987014, z: -12.243407}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 780302714}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1181175498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7673372736591887144, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
@@ -1257,10 +1217,10 @@ GameObject:
   - component: {fileID: 1918188542}
   - component: {fileID: 1918188541}
   - component: {fileID: 1918188540}
-  - component: {fileID: 1918188544}
   - component: {fileID: 1918188545}
+  - component: {fileID: 1918188546}
   m_Layer: 0
-  m_Name: Ingredient1
+  m_Name: Ingredient1pdough
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1346,27 +1306,12 @@ Transform:
   m_GameObject: {fileID: 1918188539}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: 0.79, z: -1.6}
+  m_LocalPosition: {x: -8.1, y: 0.79, z: -7.2}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1918188544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918188539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f62d6f195cff047952ae851f1f3711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pizzaDoughPrefab: {fileID: 2211686961509615402, guid: 3c93ee6c7621d0b47b19973438bf0db6, type: 3}
-  _parentRightHand: {fileID: 1181175498}
-  _spawn: {fileID: 224842660}
 --- !u!65 &1918188545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1388,6 +1333,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1918188546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918188539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda20eae5ba27064da50d23d6920efaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentRightHand: {fileID: 1181175498}
+  _spawn: {fileID: 224842660}
+  playerScript: {fileID: 532991735}
+  pizzaDoughPrefab: {fileID: 2211686961509615402, guid: 3c93ee6c7621d0b47b19973438bf0db6, type: 3}
 --- !u!1 &1932916076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,6 +1454,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2125052286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+  m_PrefabInstance: {fileID: 570163854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b307a819c6e584448acf3cb7975bf4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2135408647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,8 +1477,10 @@ GameObject:
   - component: {fileID: 2135408650}
   - component: {fileID: 2135408649}
   - component: {fileID: 2135408648}
+  - component: {fileID: 2135408653}
+  - component: {fileID: 2135408652}
   m_Layer: 0
-  m_Name: Ingredient2
+  m_Name: Ingredient2psauce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1527,7 +1501,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1592,12 +1566,49 @@ Transform:
   m_GameObject: {fileID: 2135408647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.6, y: 0.67, z: -1.6}
+  m_LocalPosition: {x: -8.1, y: 0.67, z: -3.5}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2135408652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135408647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f32bd1cb91b8f24ea60b6a143acd245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentRightHand: {fileID: 1181175498}
+  _spawn: {fileID: 224842660}
+  playerScript: {fileID: 532991735}
+  pizzaSaucePrefab: {fileID: 3378236295757821822, guid: eca82e633945b2e40961f838e7e14d29, type: 3}
+--- !u!65 &2135408653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135408647}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1613,3 +1624,4 @@ SceneRoots:
   - {fileID: 390044559}
   - {fileID: 1918188543}
   - {fileID: 2135408651}
+  - {fileID: 888293349}
