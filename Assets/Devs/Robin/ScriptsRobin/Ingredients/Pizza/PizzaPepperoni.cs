@@ -13,10 +13,13 @@ public class PizzaPepperoni : MonoBehaviour
 
     [SerializeField]
     private Transform _spawn;
+
+    private PlayerMovement playerScript;
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            playerScript = other.GetComponent<PlayerMovement>();
             if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.UpArrow))
             {
                 if (!iscreated)
@@ -32,6 +35,7 @@ public class PizzaPepperoni : MonoBehaviour
                     //pepperoniObj.transform.localScale = new Vector3(0.008f, 0.0002f, 0.008f); // change its local scale in x y z format
                     //pepperoniObj.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
                     iscreated = true;
+                    playerScript.currentItems.Add(pepperoniObj);
                 }
             }
         }
