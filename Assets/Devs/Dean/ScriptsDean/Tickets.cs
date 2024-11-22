@@ -14,7 +14,7 @@ public class Tickets : MonoBehaviour
     public int maxBurgerTickets = 3;
     public int amountOfBurgerTickets = 0;
     public int amountOfCoinsForBurgerTicket = 10;
-    private List<List<GameObject>> burgerTickets = new List<List<GameObject>>();
+    public List<List<GameObject>> burgerTickets = new List<List<GameObject>>();
 
     public GameObject pizzaDough;
     public GameObject pizzaSauce;
@@ -26,7 +26,7 @@ public class Tickets : MonoBehaviour
     public int maxPizzaTickets = 3;
     public int amountOfPizzaTickets = 0;
     public int amountOfCoinsForPizzaTicket = 10;
-    private List<List<GameObject>> pizzaTickets = new List<List<GameObject>>();
+    public List<List<GameObject>> pizzaTickets = new List<List<GameObject>>();
 
     [SerializeField] private PlayerCoins coinsScript;
 
