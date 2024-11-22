@@ -48,11 +48,14 @@ public class InAndOutOven : MonoBehaviour
                         // timer gaat aan
                         m_OvenTimer = 10;
                         m_IsEnabled = true;
-                        foreach (GameObject ingredient in _playerComponent.currentItems)
+                        for (int i = 0; i < _playerComponent.currentItems.Count; i++)
                         {
+                            GameObject ingredient = _playerComponent.currentItems[i];
                             Destroy(ingredient);
                             _playerComponent.currentItems.Remove(ingredient);
+                            i--;
                         }
+
                         Debug.Log("qwertyuio");
                     }
                 }
