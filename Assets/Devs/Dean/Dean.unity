@@ -2185,6 +2185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerscript: {fileID: 0}
+  _spawn: {fileID: 0}
+  pizza: {fileID: 0}
 --- !u!1 &1812480400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,6 +2571,10 @@ PrefabInstance:
       propertyPath: _parentRightHand
       value: 
       objectReference: {fileID: 342093155}
+    - target: {fileID: 4998849047936444810, guid: b36f8317c40392e4eb2874afefaa0afd, type: 3}
+      propertyPath: pizzaPepperoniPrefab
+      value: 
+      objectReference: {fileID: 2577535639651948648, guid: 636872d0ef9de2e48b485dfc3b4719d6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

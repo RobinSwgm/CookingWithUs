@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,23 +19,39 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     public List<GameObject> currentItems;
-        
+
+    private bool canMove = false;
+
+    private void Start()
+    {
+        StartCoroutine(StartUp());
+    }
+
     private void Update()
     {
-        animator.SetFloat("PlayerSpeed", moveSpeed / maxSpeed);
-        turnInput = turn.action.ReadValue<float>();
-        if (turnInput != 0 && moveSpeed >= minSpeed)
+        if (canMove)
         {
-            moveSpeed -= deceleration * Time.deltaTime;
-            moveSpeed = Mathf.Min(moveSpeed, maxSpeed);
+            animator.SetFloat("PlayerSpeed", moveSpeed / maxSpeed);
+            turnInput = turn.action.ReadValue<float>();
+            if (turnInput != 0 && moveSpeed >= minSpeed)
+            {
+                moveSpeed -= deceleration * Time.deltaTime;
+                moveSpeed = Mathf.Min(moveSpeed, maxSpeed);
+            }
+            if (turnInput == 0 && moveSpeed < maxSpeed)
+            {
+                moveSpeed += acceleration * Time.deltaTime;
+                moveSpeed = Mathf.Min(moveSpeed, maxSpeed);
+            }
+            rb.velocity = transform.forward * moveSpeed;
+            Quaternion deltaRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
+            rb.MoveRotation(rb.rotation * deltaRotation);
         }
-        if (turnInput == 0 && moveSpeed < maxSpeed)
-        {
-            moveSpeed += acceleration * Time.deltaTime;
-            moveSpeed = Mathf.Min(moveSpeed, maxSpeed);
-        }
-        rb.velocity = transform.forward * moveSpeed;
-        Quaternion deltaRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
-        rb.MoveRotation(rb.rotation * deltaRotation);
+    }
+
+    private IEnumerator StartUp()
+    {
+        yield return new WaitForSeconds(3);
+        canMove = true;
     }
 }
