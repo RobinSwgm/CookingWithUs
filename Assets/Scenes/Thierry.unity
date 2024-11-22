@@ -874,6 +874,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: maxSpeed
+      value: 26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1047,9 +1051,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45162a1f846f26f469f177bf5a517c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfCoins: 100
-  coinDecreaseTime: 1
-  playerCoins: {fileID: 121561216}
+  player1AmountOfCoins: 100
+  player1Coins: {fileID: 0}
+  player1Lost: {fileID: 0}
+  player1Difficulty: 1
+  player2AmountOfCoins: 100
+  player2Coins: {fileID: 0}
+  player2Lost: {fileID: 0}
+  player2Difficulty: 1
+  GameOver: 0
 --- !u!114 &370631805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,6 +1082,7 @@ MonoBehaviour:
   turnInput: 0
   rb: {fileID: 0}
   animator: {fileID: 0}
+  currentItems: []
 --- !u!114 &370631806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2865,7 +2876,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 56.7
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2892,7 +2903,7 @@ Transform:
   m_GameObject: {fileID: 916356672}
   serializedVersion: 2
   m_LocalRotation: {x: 0.48498192, y: -0.0006301132, z: 0.0022464076, w: 0.8745211}
-  m_LocalPosition: {x: 14.06, y: 44.94, z: -31.86}
+  m_LocalPosition: {x: 10.1, y: 44.94, z: -31.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4095,6 +4106,7 @@ MonoBehaviour:
   burgerXOffset: 200
   maxBurgerTickets: 3
   amountOfBurgerTickets: 0
+  amountOfCoinsForBurgerTicket: 10
   pizzaDough: {fileID: 4432235763134041506, guid: 1d5d7a8020f0f5a439decf8720c3e7fd, type: 3}
   pizzaSauce: {fileID: 1365813708488173585, guid: d935d2e87cfdeeb468bd6c062e8caae7, type: 3}
   pizzaIngredientList:
@@ -4109,7 +4121,8 @@ MonoBehaviour:
   pizzaXOffset: 200
   maxPizzaTickets: 3
   amountOfPizzaTickets: 0
-  difficulty: 2
+  amountOfCoinsForPizzaTicket: 10
+  coinsScript: {fileID: 0}
 --- !u!4 &1306088855
 Transform:
   m_ObjectHideFlags: 0
@@ -4588,6 +4601,34 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.138633
       objectReference: {fileID: 0}
+    - target: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: maxSpeed
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507872478436576357, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507872478436576357, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce139592cce4e68498f7def3f835bbbf, type: 2}
+    - target: {fileID: 3507872478436576357, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b63f9167d29b804aa7cad56d866e9fe, type: 2}
+    - target: {fileID: 3802494227823637565, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802494227823637565, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce139592cce4e68498f7def3f835bbbf, type: 2}
+    - target: {fileID: 3802494227823637565, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b63f9167d29b804aa7cad56d866e9fe, type: 2}
     - target: {fileID: 4826354430643284840, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
       propertyPath: m_Name
       value: PlayerChef1
@@ -6289,9 +6330,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45162a1f846f26f469f177bf5a517c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfCoins: 100
-  coinDecreaseTime: 1
-  playerCoins: {fileID: 80551586}
+  player1AmountOfCoins: 100
+  player1Coins: {fileID: 0}
+  player1Lost: {fileID: 0}
+  player1Difficulty: 1
+  player2AmountOfCoins: 100
+  player2Coins: {fileID: 0}
+  player2Lost: {fileID: 0}
+  player2Difficulty: 1
+  GameOver: 0
 --- !u!114 &2080178449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6314,6 +6361,7 @@ MonoBehaviour:
   turnInput: 0
   rb: {fileID: 0}
   animator: {fileID: 0}
+  currentItems: []
 --- !u!114 &2080178450
 MonoBehaviour:
   m_ObjectHideFlags: 0
