@@ -21,7 +21,7 @@ public class PizzaSauce : MonoBehaviour
                 {
 
                     //zorgt ervoor dat de sauce boven de bodem van de pizza spawnt
-                    Vector3 adjustedSpawnPosition = _spawn.position + new Vector3(0f, 0.02f, 0f);
+                    Vector3 adjustedSpawnPosition = _spawn.position + new Vector3(0f, 0.04f, 0f);
 
                     //Debug.Log("Hit player");
 
