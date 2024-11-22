@@ -8,6 +8,10 @@ public class InAndOutOven : MonoBehaviour
     private float m_OvenTimer;
     [SerializeField] private PlayerMovement playerscript;
 
+
+    public Transform _spawn;
+    public GameObject pizza;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +28,9 @@ public class InAndOutOven : MonoBehaviour
             if (m_OvenTimer < 0) // timer is voorbij!
             {
                 m_IsEnabled = false; // oven gaat uit!
+                GameObject pizzaclone;
+                pizzaclone = Instantiate(pizza, _spawn.position, transform.rotation, _spawn.transform);
+                Debug.Log("pizzainhand");
                 // verwijder deeg
                 // instantiate actual pizza!
             }

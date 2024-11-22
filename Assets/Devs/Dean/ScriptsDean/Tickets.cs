@@ -149,6 +149,9 @@ public class Tickets : MonoBehaviour
             RearrangePizzaTickets();
             amountOfPizzaTickets--;
             coinsScript.player1AmountOfCoins += amountOfCoinsForPizzaTicket * coinsScript.player1Difficulty;
+            PizzaDough.iscreated = false;
+            PizzaSauce.iscreated = false;
+            PizzaPepperoni.iscreated = false;
         }
     }
 
