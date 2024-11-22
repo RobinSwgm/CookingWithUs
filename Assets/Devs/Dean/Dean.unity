@@ -2493,9 +2493,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda20eae5ba27064da50d23d6920efaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pizzaDoughPrefab: {fileID: 2211686961509615402, guid: 3c93ee6c7621d0b47b19973438bf0db6, type: 3}
   _parentRightHand: {fileID: 342093155}
   _spawn: {fileID: 208615636}
+  playerScript: {fileID: 0}
+  pizzaDoughPrefab: {fileID: 2211686961509615402, guid: 3c93ee6c7621d0b47b19973438bf0db6, type: 3}
 --- !u!1001 &2135185505
 PrefabInstance:
   m_ObjectHideFlags: 0
