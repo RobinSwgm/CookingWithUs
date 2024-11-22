@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public List<GameObject> currentItems;
 
     private bool canMove = false;
+    public float waitTime = 3;
 
     private void Start()
     {
@@ -51,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator StartUp()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(waitTime);
         canMove = true;
     }
 }
