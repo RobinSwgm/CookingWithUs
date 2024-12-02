@@ -4,9 +4,7 @@ public class PizzaPepperoni : PizzaMain
 {
     [SerializeField] GameObject pizzaPepperoniPrefab;
 
-
     public static bool iscreated;
-
 
     protected override void AdjustedSpawnPoint()
     {

@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PizzaMain : MonoBehaviour
+public class BurgerMain : MonoBehaviour
 {
     // [SerializeField] GameObject pizzaDoughPrefab;
 
