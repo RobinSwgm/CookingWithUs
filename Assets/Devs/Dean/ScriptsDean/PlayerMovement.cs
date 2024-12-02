@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = false;
     public float waitTime = 3;
 
+    public float tripTime = 2;
+
     private void Start()
     {
         StartCoroutine(StartUp());
@@ -47,6 +49,11 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = transform.forward * moveSpeed;
             Quaternion deltaRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
             rb.MoveRotation(rb.rotation * deltaRotation);
+
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                ThrowItems();
+            }
         }
     }
 
@@ -54,5 +61,21 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         canMove = true;
+    }
+
+    public IEnumerator Trippped()
+    {
+        canMove = false;
+        rb.velocity = new Vector3(0,0,0);
+        yield return new WaitForSeconds(tripTime);
+        canMove = true;
+    }
+
+    private void ThrowItems()
+    {
+        for (int i = 0; i < currentItems.Count; i++)
+        {
+            Instantiate(currentItems[i]);
+        }
     }
 }
