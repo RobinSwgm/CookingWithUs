@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     public float waitTime = 3;
 
     public float tripTime = 2;
+
+    public GameObject DropHolder;
+    public Transform spawnPosition;
 
     private void Start()
     {
@@ -73,9 +77,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void ThrowItems()
     {
-        for (int i = 0; i < currentItems.Count; i++)
+        if (currentItems.Count != 0)
         {
-            Instantiate(currentItems[i]);
+            Vector3 newSpawnPosition = new Vector3(0f, 10f, 0f);
+            GameObject newDrop = Instantiate(DropHolder, spawnPosition.position, Quaternion.identity);
+            for (int i = 0; i < currentItems.Count; i++)
+            {
+                Vector3 adjustedSpawnPosition = new Vector3(0f, 0.04f * i, 0f);
+                Instantiate(currentItems[i], newDrop.transform.position + newDrop.transform.up * (0.04f * i), Quaternion.identity, newDrop.transform);
+            }
+            for (int i = 0; i < currentItems.Count; i++)
+            {
+                GameObject ingredient = currentItems[i];
+                Destroy(ingredient);
+                currentItems.Remove(ingredient);
+                i--;
+            }
         }
     }
 }
