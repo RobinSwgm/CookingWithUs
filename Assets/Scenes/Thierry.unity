@@ -935,6 +935,14 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: minSpeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618896917991172033, guid: d70cb396e1becab4986a43c63caf0fb0, type: 3}
+      propertyPath: deceleration
+      value: 5.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2942,6 +2950,7 @@ GameObject:
   - component: {fileID: 916356674}
   - component: {fileID: 916356673}
   - component: {fileID: 916356676}
+  - component: {fileID: 916356677}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3046,7 +3055,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -3067,6 +3076,23 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &916356677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916356672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 36.21
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 00afbd3e48ecbd64496636238e2207fe, type: 2}
 --- !u!1 &943748162
 GameObject:
   m_ObjectHideFlags: 0
@@ -4781,6 +4807,14 @@ PrefabInstance:
     - target: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
       propertyPath: maxSpeed
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: minSpeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895707354437735118, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
+      propertyPath: deceleration
+      value: 5.02
       objectReference: {fileID: 0}
     - target: {fileID: 3507872478436576357, guid: 8a342677332dd8946be7269e5b50242c, type: 3}
       propertyPath: m_Materials.Array.size
