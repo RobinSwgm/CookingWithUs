@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material 1
+  m_Name: burger
   m_Shader: {fileID: -6465566751694194690, guid: 15a26cb7b661e1343b725db4a30238d0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
