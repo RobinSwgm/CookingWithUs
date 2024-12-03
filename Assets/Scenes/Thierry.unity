@@ -1205,6 +1205,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   animator: {fileID: 0}
   currentItems: []
+  waitTime: 3
+  tripTime: 2
+  DropHolder: {fileID: 0}
+  spawnPosition: {fileID: 0}
 --- !u!114 &370631806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6817,6 +6821,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   animator: {fileID: 0}
   currentItems: []
+  waitTime: 3
+  tripTime: 2
+  DropHolder: {fileID: 0}
+  spawnPosition: {fileID: 0}
 --- !u!114 &2080178450
 MonoBehaviour:
   m_ObjectHideFlags: 0
