@@ -13,7 +13,6 @@ public class FloorFood : MonoBehaviour
             playerScript = other.GetComponent<PlayerMovement>();
             playerScript.StartCoroutine(playerScript.Trippped());
             Destroy(gameObject);
-            Debug.Log("QWERTYUIOP");
         }
     }
 }
