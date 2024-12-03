@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     public List<GameObject> currentItems;
+    public bool hasCooked = false;
 
     private bool canMove = false;
     public float waitTime = 3;
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 ThrowItems();
+                hasCooked = false;
             }
         }
     }
