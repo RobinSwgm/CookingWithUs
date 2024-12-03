@@ -13,8 +13,9 @@ public class BurgerBottomBun : BurgerMain
     {
         if (!iscreated)
         {
-            Vector3 adjustedSpawnPosition = _spawn.position + new Vector3(0f, 0.08f, 0f);
+            Vector3 adjustedSpawnPosition = _spawn.position + new Vector3(0f, 0f, 0f);
             GameObject bottombunObj = Instantiate(BottomBunBurgerPrefab, adjustedSpawnPosition, Quaternion.identity, _parentRightHand.transform);
+            bottombunObj.transform.localScale = new Vector3(80, 80f, 80f);
             playerScript.currentItems.Add(bottombunObj);
             iscreated = true;
         }
