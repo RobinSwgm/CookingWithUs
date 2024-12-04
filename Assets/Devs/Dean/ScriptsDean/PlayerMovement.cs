@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed = 7;
     public float minSpeed = 1;
     public InputActionReference turn;
+    [SerializeField] private AudioSource playerSFXSource;
+    [SerializeField] private AudioClip playerSteppingSound;
+    [SerializeField] private AudioClip playerThrowingSound;
+    [SerializeField] private AudioClip playerTrippingSound;
     [SerializeField] private float turnInput;
 
     public Rigidbody rb;
@@ -63,15 +67,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //private IEnumerator stepSfxLogic()
+    //{
+    //    while (true)
+    //    {
+    //        yield return new WaitForSeconds(moveSpeed / 100);
+    //        if (!playerSFXSource.isPlaying)
+    //        playerSFXSource.PlayOneShot(playerSteppingSound);
+    //    }
+    //}
+
     private IEnumerator StartUp()
     {
         yield return new WaitForSeconds(waitTime);
+        //StartCoroutine(stepSfxLogic());
         canMove = true;
     }
 
     public IEnumerator Trippped()
     {
+        playerSFXSource.PlayOneShot(playerTrippingSound);
         canMove = false;
+        moveSpeed = 0;
         rb.velocity = new Vector3(0,0,0);
         yield return new WaitForSeconds(tripTime);
         canMove = true;
@@ -81,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentItems.Count != 0)
         {
+            playerSFXSource.PlayOneShot(playerThrowingSound);
+
             Vector3 newSpawnPosition = new Vector3(0f, 10f, 0f);
             GameObject newDrop = Instantiate(DropHolder, spawnPosition.position, Quaternion.identity);
             for (int i = 0; i < currentItems.Count; i++)
