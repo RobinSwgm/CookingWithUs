@@ -15666,8 +15666,6 @@ SceneRoots:
   - {fileID: 338567872}
   - {fileID: 1982495800}
   - {fileID: 232670000}
-<<<<<<< HEAD
-<<<<<<< HEAD
   - {fileID: 1757586774}
   - {fileID: 577474523}
   - {fileID: 161892863}
@@ -15718,8 +15716,3 @@ SceneRoots:
   - {fileID: 1984330680}
   - {fileID: 501794511}
   - {fileID: 1552990281}
-=======
-  - {fileID: 872972716}
->>>>>>> 0fb0e0d752812bf9d7f4ecd350823fc63b6c6b21
-=======
->>>>>>> parent of 0fb0e0d (Added music in the main scene)
