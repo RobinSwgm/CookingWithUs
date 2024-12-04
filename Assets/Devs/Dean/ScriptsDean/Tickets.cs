@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tickets : MonoBehaviour
 {
+    [SerializeField] private AudioSource SFXSource;
     public GameObject burgerBottomBun;
     public GameObject burgerTopBun;
     public List<GameObject> burgerIngredientList;
@@ -14,6 +15,7 @@ public class Tickets : MonoBehaviour
     public int maxBurgerTickets = 3;
     public int amountOfBurgerTickets = 0;
     public int amountOfCoinsForBurgerTicket = 10;
+    [SerializeField] private AudioClip burgerTicketFinishedSFX;
     public List<List<GameObject>> burgerTickets = new List<List<GameObject>>();
 
     public GameObject pizzaDough;
@@ -26,6 +28,7 @@ public class Tickets : MonoBehaviour
     public int maxPizzaTickets = 3;
     public int amountOfPizzaTickets = 0;
     public int amountOfCoinsForPizzaTicket = 10;
+    [SerializeField] private AudioClip pizzaTicketFinishedSFX;
     public List<List<GameObject>> pizzaTickets = new List<List<GameObject>>();
 
     [SerializeField] private PlayerCoins coinsScript;
@@ -129,6 +132,8 @@ public class Tickets : MonoBehaviour
             {
                 Destroy(ingredient);
             }
+            SFXSource.PlayOneShot(burgerTicketFinishedSFX);
+
             burgerTickets.RemoveAt(index);
             RearrangeBurgerTickets();
             amountOfBurgerTickets--;
@@ -145,6 +150,8 @@ public class Tickets : MonoBehaviour
             {
                 Destroy(ingredient);
             }
+            SFXSource.PlayOneShot(pizzaTicketFinishedSFX);
+
             pizzaTickets.RemoveAt(index);
             RearrangePizzaTickets();
             amountOfPizzaTickets--;
