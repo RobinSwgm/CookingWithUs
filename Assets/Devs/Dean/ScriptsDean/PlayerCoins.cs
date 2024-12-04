@@ -16,6 +16,8 @@ public class PlayerCoins : MonoBehaviour
     public int player2Difficulty = 1;
 
     public bool GameOver = false;
+    [SerializeField] private GameObject restartButton;
+    [SerializeField] private GameObject mainMenuButton;
 
     private void Start()
     {
@@ -23,6 +25,8 @@ public class PlayerCoins : MonoBehaviour
         StartCoroutine(Player2CoinDescrease());
         player1Lost.SetActive(false);
         player2Lost.SetActive(false);
+        restartButton.SetActive(false);
+        mainMenuButton.SetActive(false);
     }
 
     private void Update()
@@ -40,6 +44,8 @@ public class PlayerCoins : MonoBehaviour
             if (player1AmountOfCoins <= 0)
             {
                 player1Lost.SetActive(true);
+                restartButton.SetActive(true);
+                mainMenuButton.SetActive(true);
                 Time.timeScale = 0;
             }
             else
@@ -58,6 +64,8 @@ public class PlayerCoins : MonoBehaviour
             if (player2AmountOfCoins <= 0)
             {
                 player2Lost.SetActive(true);
+                restartButton.SetActive(true);
+                mainMenuButton.SetActive(true);
                 Time.timeScale = 0;
             }
             else

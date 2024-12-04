@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ActionPlayer1",
+                    "name": "GrabPlayer1",
                     "type": "Button",
                     "id": "648adf75-61cc-47dd-a9cd-212c716c6a13",
                     "expectedControlType": "Button",
@@ -33,9 +33,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ActionPlayer2",
+                    "name": "GrabPlayer2",
                     "type": "Button",
                     "id": "f69e0249-3a37-4386-9fce-92cc1cd6d812",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DropPlayer1",
+                    "type": "Button",
+                    "id": "e00a6d7b-7104-469a-814e-3315ede99838",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DropPlayer2",
+                    "type": "Button",
+                    "id": "51017fef-2a80-43fb-b71e-429d3a3f0260",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -112,22 +130,44 @@
                 {
                     "name": "",
                     "id": "a7cff41d-a73f-4350-b75f-9beaf36612ac",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ActionPlayer1",
+                    "action": "GrabPlayer1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "7cdeb4d5-9e9f-4814-9db6-48ba025087e2",
-                    "path": "<Keyboard>/rightShift",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ActionPlayer2",
+                    "action": "GrabPlayer2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4459413b-3b89-4303-83aa-4c1b9c525472",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropPlayer1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddb48b0b-3c0a-4502-8927-4471f72247aa",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropPlayer2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

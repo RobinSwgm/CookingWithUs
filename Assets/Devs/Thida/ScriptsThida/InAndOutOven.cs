@@ -26,11 +26,12 @@ public class InAndOutOven : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("OVEN!");
         if (other.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.UpArrow))
+            PlayerMovement _playerComponent = other.GetComponent<PlayerMovement>();
+            if (_playerComponent.grab.action.inProgress)
             {
-                PlayerMovement _playerComponent = other.GetComponent<PlayerMovement>();
                 if (_playerComponent != null)
                 {
                     if (_playerComponent.currentItems.Count > 0 && !m_IsEnabled && !isCooked && !_playerComponent.hasCooked)

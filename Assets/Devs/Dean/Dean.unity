@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 192839598}
   - component: {fileID: 192839597}
   m_Layer: 5
-  m_Name: Burger
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -339,10 +339,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1812480402}
-        m_TargetAssemblyTypeName: Tickets, Assembly-CSharp
-        m_MethodName: DeleteBurgerTicket
-        m_Mode: 3
+      - m_Target: {fileID: 1781934175}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Burger
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1145,6 +1145,8 @@ MonoBehaviour:
   player2Lost: {fileID: 1249589068}
   player2Difficulty: 1
   GameOver: 0
+  restartButton: {fileID: 192839595}
+  mainMenuButton: {fileID: 1347889477}
 --- !u!1 &990558473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,7 +1861,7 @@ GameObject:
   - component: {fileID: 1347889480}
   - component: {fileID: 1347889479}
   m_Layer: 5
-  m_Name: Pizza
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1929,10 +1931,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1812480402}
-        m_TargetAssemblyTypeName: Tickets, Assembly-CSharp
-        m_MethodName: DeletePizzaTicket
-        m_Mode: 3
+      - m_Target: {fileID: 1781934175}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1992,7 +1994,7 @@ GameObject:
   - component: {fileID: 1376072615}
   - component: {fileID: 1376072614}
   - component: {fileID: 1376072618}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2155,9 +2157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pizza
-
-'
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2269,6 +2269,50 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1781934173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1781934174}
+  - component: {fileID: 1781934175}
+  m_Layer: 0
+  m_Name: ButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1781934174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781934173}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9122797, y: 8.870812, z: -13.449391}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1781934175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781934173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a037c56312b2399498c96d9d547d8af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1811347831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,9 +2453,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdfcfe812978af4995c6cb3bb4e8b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_OvenTimer: 0
   playerscript: {fileID: 0}
-  _spawn: {fileID: 0}
-  pizza: {fileID: 0}
+  isCooked: 0
+  cookingList: []
 --- !u!1 &1812480400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,6 +2501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b2270f6a2dd2048aff4c61dff4838f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXSource: {fileID: 0}
   burgerBottomBun: {fileID: 5335056536742038281, guid: 5121746c70acb9d45a17313bedc58c70, type: 3}
   burgerTopBun: {fileID: 6837458747765828334, guid: 9b18473ef1f291c42a11ddb9c6d9d299, type: 3}
   burgerIngredientList:
@@ -2471,6 +2517,8 @@ MonoBehaviour:
   maxBurgerTickets: 3
   amountOfBurgerTickets: 0
   amountOfCoinsForBurgerTicket: 10
+  burgerTicketFinishedSFX: {fileID: 0}
+  burgerTicketsCompleted: 0
   pizzaDough: {fileID: 4432235763134041506, guid: 1d5d7a8020f0f5a439decf8720c3e7fd, type: 3}
   pizzaSauce: {fileID: 1365813708488173585, guid: d935d2e87cfdeeb468bd6c062e8caae7, type: 3}
   pizzaIngredientList:
@@ -2482,6 +2530,8 @@ MonoBehaviour:
   maxPizzaTickets: 3
   amountOfPizzaTickets: 0
   amountOfCoinsForPizzaTicket: 10
+  pizzaTicketFinishedSFX: {fileID: 0}
+  pizzaTicketsCompleted: 0
   coinsScript: {fileID: 957154042}
 --- !u!4 &1861752185 stripped
 Transform:
@@ -2880,3 +2930,4 @@ SceneRoots:
   - {fileID: 512219154}
   - {fileID: 1376072617}
   - {fileID: 1265075799}
+  - {fileID: 1781934174}

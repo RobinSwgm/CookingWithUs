@@ -34,6 +34,7 @@ public class Customers : MonoBehaviour
                                         playerScript.currentItems.RemoveAt(j);
                                     }
                                     ticketScript.DeletePizzaTicket(0);
+                                    playerScript.ResetPizzaIngredients();
                                     playerScript.hasCooked = false;
                                 }
                             }
@@ -59,6 +60,7 @@ public class Customers : MonoBehaviour
                                         playerScript.currentItems.RemoveAt(j);
                                     }
                                     ticketScript.DeleteBurgerTicket(0);
+                                    playerScript.ResetBurgerIngredients();
                                     playerScript.hasCooked = false;
                                 }
                             }

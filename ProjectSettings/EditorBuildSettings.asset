@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Robin.unity
     guid: 51633c530ba8a6345978852d09f97412
+  - enabled: 1
+    path: Assets/Devs/Dean/Dean.unity
+    guid: b8ec8fef75567ac4fa02c16a49b4a6ee
   m_configObjects: {}

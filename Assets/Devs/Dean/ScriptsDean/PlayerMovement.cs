@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip playerThrowingSound;
     [SerializeField] private AudioClip playerTrippingSound;
     [SerializeField] private float turnInput;
+    public InputActionReference grab;
+    public InputActionReference drop;
 
     public Rigidbody rb;
 
@@ -58,8 +60,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = transform.forward * moveSpeed;
             Quaternion deltaRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
             rb.MoveRotation(rb.rotation * deltaRotation);
-
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            if (drop.action.inProgress)
             {
                 ThrowItems();
                 hasCooked = false;
@@ -106,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Vector3 adjustedSpawnPosition = new Vector3(0f, 0.04f * i, 0f);
                 Instantiate(currentItems[i], newDrop.transform.position + newDrop.transform.up * (0.04f * i), Quaternion.identity, newDrop.transform);
+                Debug.Log("Dropped!");
             }
             for (int i = 0; i < currentItems.Count; i++)
             {
@@ -114,6 +116,25 @@ public class PlayerMovement : MonoBehaviour
                 currentItems.Remove(ingredient);
                 i--;
             }
+            ResetBurgerIngredients();
+            ResetPizzaIngredients();
         }
+    }
+
+    public void ResetPizzaIngredients()
+    {
+        PizzaDough.iscreated = false;
+        PizzaSauce.iscreated = false;
+        PizzaMushroom.iscreated = false;
+        PizzaPepperoni.iscreated = false;
+    }
+    public void ResetBurgerIngredients()
+    {
+        BurgerBottomBun.iscreated = false;
+        BurgerCheese.iscreated = false;
+        BurgerMeat.iscreated = false;
+        BurgerSalad.iscreated = false;
+        BurgerTomato.iscreated = false;
+        BurgerTopBun.iscreated = false;
     }
 }

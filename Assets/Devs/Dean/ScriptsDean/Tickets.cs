@@ -17,6 +17,7 @@ public class Tickets : MonoBehaviour
     public int amountOfCoinsForBurgerTicket = 10;
     [SerializeField] private AudioClip burgerTicketFinishedSFX;
     public List<List<GameObject>> burgerTickets = new List<List<GameObject>>();
+    public int burgerTicketsCompleted;
 
     public GameObject pizzaDough;
     public GameObject pizzaSauce;
@@ -30,6 +31,7 @@ public class Tickets : MonoBehaviour
     public int amountOfCoinsForPizzaTicket = 10;
     [SerializeField] private AudioClip pizzaTicketFinishedSFX;
     public List<List<GameObject>> pizzaTickets = new List<List<GameObject>>();
+    public int pizzaTicketsCompleted;
 
     [SerializeField] private PlayerCoins coinsScript;
 
@@ -138,6 +140,15 @@ public class Tickets : MonoBehaviour
             RearrangeBurgerTickets();
             amountOfBurgerTickets--;
             coinsScript.player2AmountOfCoins += amountOfCoinsForBurgerTicket * coinsScript.player2Difficulty;
+            burgerTicketsCompleted++;
+            if (burgerTicketsCompleted == 3)
+            {
+                coinsScript.player2Difficulty++;
+            }
+            if (burgerTicketsCompleted == 7)
+            {
+                coinsScript.player2Difficulty++;
+            }
         }
     }
 
@@ -156,9 +167,15 @@ public class Tickets : MonoBehaviour
             RearrangePizzaTickets();
             amountOfPizzaTickets--;
             coinsScript.player1AmountOfCoins += amountOfCoinsForPizzaTicket * coinsScript.player1Difficulty;
-            PizzaDough.iscreated = false;
-            PizzaSauce.iscreated = false;
-            PizzaPepperoni.iscreated = false;
+            pizzaTicketsCompleted++;
+            if (pizzaTicketsCompleted == 3)
+            {
+                coinsScript.player1Difficulty++;
+            }
+            if (pizzaTicketsCompleted == 7)
+            {
+                coinsScript.player1Difficulty++;
+            }
         }
     }
 

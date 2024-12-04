@@ -20,11 +20,17 @@ public class PizzaMain : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerScript = other.GetComponent<PlayerMovement>();
-            if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.UpArrow))
+            /*if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.UpArrow))
             {
                 AdjustedSpawnPoint();
                 Debug.Log("Hit player");
 
+            }*/
+
+            if (playerScript.grab.action.inProgress)
+            {
+                AdjustedSpawnPoint();
+                Debug.Log("Hit player");
             }
         }
     }

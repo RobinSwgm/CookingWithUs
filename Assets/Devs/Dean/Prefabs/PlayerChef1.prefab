@@ -111,7 +111,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d36e5cef57fffa7428c54c59a56a4497, type: 2}
     - target: {fileID: -8679921383154817045, guid: 724495603e28a0046a193c68bee484e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8133532
+      value: 7.32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 724495603e28a0046a193c68bee484e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -119,11 +119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 724495603e28a0046a193c68bee484e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.677095
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 724495603e28a0046a193c68bee484e6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 724495603e28a0046a193c68bee484e6, type: 3}
       propertyPath: m_LocalRotation.x
@@ -131,7 +131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 724495603e28a0046a193c68bee484e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 724495603e28a0046a193c68bee484e6, type: 3}
       propertyPath: m_LocalRotation.z
@@ -143,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 724495603e28a0046a193c68bee484e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 724495603e28a0046a193c68bee484e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -541,6 +541,8 @@ MonoBehaviour:
   playerThrowingSound: {fileID: 8300000, guid: 57751a77125d41e4c82b695019587b7b, type: 3}
   playerTrippingSound: {fileID: 8300000, guid: f55b31a5bf4eb7341b6f8fc32cf7bb60, type: 3}
   turnInput: 0
+  grab: {fileID: -2803057896787044281, guid: a490726aacd482a4581928019503f2b5, type: 3}
+  drop: {fileID: -1958343071676506625, guid: a490726aacd482a4581928019503f2b5, type: 3}
   rb: {fileID: 5490017209730824186}
   animator: {fileID: 5346317058013999999}
   currentItems: []
