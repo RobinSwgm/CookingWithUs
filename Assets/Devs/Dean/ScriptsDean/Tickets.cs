@@ -62,11 +62,10 @@ public class Tickets : MonoBehaviour
         List<GameObject> newTicket = new List<GameObject>();
         GameObject topBun = Instantiate(burgerTopBun, burgerSpawnLocation);
         newTicket.Add(topBun);
-        int size = Random.Range(1, coinsScript.player2Difficulty + 1);
+        int size = coinsScript.player2Difficulty;
         for (int i = 0; i < size; i++)
         {
-            int choice = Random.Range(0, burgerIngredientList.Count);
-            GameObject ingredient = Instantiate(burgerIngredientList[choice], burgerSpawnLocation);
+            GameObject ingredient = Instantiate(burgerIngredientList[i], burgerSpawnLocation);
             newTicket.Add(ingredient);
         }
         GameObject bottomBun = Instantiate(burgerBottomBun, burgerSpawnLocation);
@@ -98,11 +97,10 @@ public class Tickets : MonoBehaviour
         GameObject sauce = Instantiate(pizzaSauce, pizzaSpawnLocation);
         newTicket.Add(dough);
         newTicket.Add(sauce);
-        int size = Random.Range(1, coinsScript.player1Difficulty + 1);
+        int size = coinsScript.player1Difficulty;
         for (int i = 0; i < size; i++)
         {
-            int choice = Random.Range(0, pizzaIngredientList.Count);
-            GameObject topping = Instantiate(pizzaIngredientList[choice], pizzaSpawnLocation);
+            GameObject topping = Instantiate(pizzaIngredientList[i], pizzaSpawnLocation);
             newTicket.Add(topping);
         }
         amountOfPizzaTickets++;

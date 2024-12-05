@@ -127,6 +127,9 @@ public class PlayerMovement : MonoBehaviour
         PizzaSauce.iscreated = false;
         PizzaMushroom.iscreated = false;
         PizzaPepperoni.iscreated = false;
+        PizzaCheese.iscreated = false;
+        PizzaHam.iscreated = false;
+        PizzaOlive.iscreated = false;
     }
     public void ResetBurgerIngredients()
     {
@@ -136,5 +139,8 @@ public class PlayerMovement : MonoBehaviour
         BurgerSalad.iscreated = false;
         BurgerTomato.iscreated = false;
         BurgerTopBun.iscreated = false;
+        BurgerChicken.iscreated = false;
+        BurgerPickle.iscreated = false;
+        BurgerUnion.iscreated = false;
     }
 }
