@@ -14,8 +14,5 @@ public class PizzaDough : PizzaMain
             playerScript.currentItems.Add(doughObj);
             iscreated = true;
         }
-
-
     }
-
 }
