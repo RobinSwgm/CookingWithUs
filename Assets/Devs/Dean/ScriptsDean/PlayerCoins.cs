@@ -39,8 +39,8 @@ public class PlayerCoins : MonoBehaviour
     {
         if (!GameOver)
         {
-            yield return new WaitForSeconds(1 / player1Difficulty);
-            player1AmountOfCoins--;
+            yield return new WaitForSeconds(1);
+            player1AmountOfCoins -= player1Difficulty;
             if (player1AmountOfCoins <= 0)
             {
                 player1Lost.SetActive(true);
@@ -59,8 +59,8 @@ public class PlayerCoins : MonoBehaviour
     {
         if (!GameOver)
         {
-            yield return new WaitForSeconds(1 / player2Difficulty);
-            player2AmountOfCoins--;
+            yield return new WaitForSeconds(1);
+            player2AmountOfCoins -= player2Difficulty;
             if (player2AmountOfCoins <= 0)
             {
                 player2Lost.SetActive(true);

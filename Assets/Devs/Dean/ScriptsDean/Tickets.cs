@@ -141,11 +141,11 @@ public class Tickets : MonoBehaviour
             burgerTicketsCompleted++;
             if (burgerTicketsCompleted == 3)
             {
-                coinsScript.player2Difficulty++;
+                coinsScript.player2Difficulty = 2;
             }
             if (burgerTicketsCompleted == 7)
             {
-                coinsScript.player2Difficulty++;
+                coinsScript.player2Difficulty = 3;
             }
         }
     }
@@ -168,11 +168,11 @@ public class Tickets : MonoBehaviour
             pizzaTicketsCompleted++;
             if (pizzaTicketsCompleted == 3)
             {
-                coinsScript.player1Difficulty++;
+                coinsScript.player1Difficulty = 2;
             }
             if (pizzaTicketsCompleted == 7)
             {
-                coinsScript.player1Difficulty++;
+                coinsScript.player1Difficulty = 3;
             }
         }
     }

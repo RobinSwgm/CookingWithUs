@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class InAndOutOven : MonoBehaviour
@@ -10,23 +11,24 @@ public class InAndOutOven : MonoBehaviour
 
     public bool isCooked = false;
     public List<GameObject> cookingList;
+    public TextMeshProUGUI ovenTimer;
 
     private void Update()
     {
         if (m_IsEnabled)
         {
             m_OvenTimer -= Time.deltaTime;
-            if (m_OvenTimer < 0)
+            if (m_OvenTimer <= 0)
             {
                 m_IsEnabled = false;
                 isCooked = true;
             }
         }
+        ovenTimer.text = "Timer: " + Mathf.Round(m_OvenTimer).ToString();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("OVEN!");
         if (other.CompareTag("Player"))
         {
             PlayerMovement _playerComponent = other.GetComponent<PlayerMovement>();

@@ -107,7 +107,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 Vector3 adjustedSpawnPosition = new Vector3(0f, 0.04f * i, 0f);
                 Instantiate(currentItems[i], newDrop.transform.position + newDrop.transform.up * (0.04f * i), Quaternion.identity, newDrop.transform);
-                Debug.Log("Dropped!");
             }
             for (int i = 0; i < currentItems.Count; i++)
             {

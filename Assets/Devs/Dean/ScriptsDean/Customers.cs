@@ -15,7 +15,7 @@ public class Customers : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerScript = other.GetComponent<PlayerMovement>();
-            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.UpArrow))
+            if (playerScript.grab.action.inProgress && playerScript.hasCooked)
             {
                 if(playerScript.currentItems.Count > 0 && ticketScript.pizzaTickets.Count > 0 && ticketScript.pizzaTickets[0].Count == playerScript.currentItems.Count)
                 {
@@ -25,6 +25,7 @@ public class Customers : MonoBehaviour
                         {
                             if (playerScript.currentItems[i].name == ticketScript.pizzaTickets[0][i].name)
                             {
+                                Debug.Log("Correct!");
                                 amountOfCorrectIngredients++;
                                 if (amountOfCorrectIngredients == ticketScript.pizzaTickets[0].Count)
                                 {
