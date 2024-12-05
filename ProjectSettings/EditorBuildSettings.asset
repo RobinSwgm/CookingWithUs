@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Robin.unity
-    guid: 51633c530ba8a6345978852d09f97412
+    path: Assets/Scenes/TitleScreen.unity
+    guid: fc8215b8f627cef44beff5c6fd47bbe3
   - enabled: 1
-    path: Assets/Devs/Dean/Dean.unity
-    guid: b8ec8fef75567ac4fa02c16a49b4a6ee
+    path: Assets/Scenes/Main.unity
+    guid: 919ce1c9c8589974b85c601356692f8b
   m_configObjects: {}

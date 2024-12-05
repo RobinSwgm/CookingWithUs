@@ -24,6 +24,6 @@ public class ButtonManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Dean");
+        SceneManager.LoadScene("Main");
     }
 }
